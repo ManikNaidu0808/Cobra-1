@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    background: url("./img/bg.jpg");
+    height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 40px;
+    font-weight: 2px;
+}
+#hiScoreBox{
+    position: absolute;
+    top: 59px;
+    right: 80px;
+    font-size: 40px;
+    font-weight: 2px;
+}
+
+#board{
+    background: linear-gradient(rgb(184, 249, 184),rgb(227, 227, 86));
+    width:90vmin; /* vh or vw mai jo bhi Bada hoga wo vmax hoga */
+    height:92vmin; /* vh or vw mai jo bhi chota hoga wo vmin hoga */
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+}
+.head{
+    background: linear-gradient(red,yellow);
+    border: 2px solid purple;
+    transform: scale(1.02);
+    border-radius: 9px; 
+}
+.snake{
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+.food{
+    background: linear-gradient(red,purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
