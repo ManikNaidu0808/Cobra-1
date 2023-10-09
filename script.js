@@ -4,7 +4,7 @@ const foodSound = new Audio('/music/food.mp3');
 const gameOverSound = new Audio('./music/gameover.mp3');
 const moveSound = new Audio('/music/move.mp3');
 const musicSound = new Audio('/music/music.mp3');
-let speed = 15  ;
+let speed = 10  ;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
@@ -112,28 +112,36 @@ else{
 }
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
-    inputDir = { x: 0, y: 1 } // start the game
+    // inputDir = { x: 0, y: 1 } // start the game
     moveSound.play();
     switch (e.key) {
         case "ArrowUp":
             console.log("ArrowUp")
+            if(inputDir.y !==1){ // Prevent moving down if currently moving up
             inputDir.x = 0;
             inputDir.y = -1;
+            }
             break;
         case "ArrowDown":
             console.log("ArrowDown")
+            if(inputDir.y !==-1){ // Prevent moving right if currently moving left
             inputDir.x = 0;
             inputDir.y = 1;
+            }
             break;
         case "ArrowLeft":
             console.log("ArrowLeft")
+            if (inputDir.x !== 1) { // Prevent moving right if currently moving left
             inputDir.x = -1;
             inputDir.y = 0;
+            }
             break;
         case "ArrowRight":
             console.log("ArrowRight")
+            if (inputDir.x !== -1) { // Prevent moving left if currently moving right
             inputDir.x = 1;
             inputDir.y = 0;
+            }
             break;
 
         default:
